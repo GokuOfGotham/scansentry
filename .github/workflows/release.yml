@@ -23,9 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build installer
-        run: npm run dist
-        env:
-          ELECTRON_BUILDER_SKIP_PUBLISH: true
+        run: npx electron-builder --win --publish never
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
