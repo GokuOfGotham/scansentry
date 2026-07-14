@@ -1,0 +1,31 @@
+{
+  "name": "scansentry",
+  "version": "0.1.0",
+  "description": "On-demand Windows scan tool: malware hash check, junk/temp cleanup, startup audit, browser hijack detection.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "author": "Julio",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.local.scansentry",
+    "productName": "ScanSentry",
+    "win": {
+      "target": "nsis"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "quarantine.js",
+      "settings.js",
+      "scanners/**/*",
+      "src/**/*"
+    ]
+  }
+}
