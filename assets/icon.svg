@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2035"/>
+      <stop offset="100%" style="stop-color:#0d1525"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00c8e0;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#00c8e0;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Shield body -->
+  <path d="M256 32 L440 112 L440 272 C440 370 356 440 256 480 C156 440 72 370 72 272 L72 112 Z"
+        fill="url(#shieldGrad)" stroke="#2a3a5c" stroke-width="4"/>
+
+  <!-- Shield inner highlight glow fill -->
+  <path d="M256 60 L416 128 L416 272 C416 356 340 418 256 454 C172 418 96 356 96 272 L96 128 Z"
+        fill="url(#glowGrad)"/>
+
+  <!-- Shield border accent -->
+  <path d="M256 48 L428 122 L428 272 C428 364 348 432 256 470 C164 432 84 364 84 272 L84 122 Z"
+        fill="none" stroke="#00c8e0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Horizontal scan line -->
+  <line x1="104" y1="256" x2="408" y2="256"
+        stroke="#00c8e0" stroke-width="2" opacity="0.25"/>
+
+  <!-- Scan sweep line (active) -->
+  <line x1="256" y1="160" x2="380" y2="256"
+        stroke="#00c8e0" stroke-width="2.5" opacity="0.7" filter="url(#glow)"/>
+
+  <!-- Radar arcs -->
+  <circle cx="256" cy="256" r="48"  fill="none" stroke="#00c8e0" stroke-width="1.5" opacity="0.20"/>
+  <circle cx="256" cy="256" r="88"  fill="none" stroke="#00c8e0" stroke-width="1.5" opacity="0.14"/>
+  <circle cx="256" cy="256" r="128" fill="none" stroke="#00c8e0" stroke-width="1" opacity="0.10"/>
+
+  <!-- Center dot -->
+  <circle cx="256" cy="256" r="7" fill="#00c8e0" opacity="0.9" filter="url(#glow)"/>
+
+  <!-- Threat blip (coral-red dot on scan perimeter) -->
+  <circle cx="344" cy="208" r="6" fill="#ff5f57" filter="url(#glow)" opacity="0.95"/>
+  <circle cx="344" cy="208" r="10" fill="#ff5f57" opacity="0.18"/>
+</svg>

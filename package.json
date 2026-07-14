@@ -17,9 +17,11 @@
     "appId": "com.local.scansentry",
     "productName": "ScanSentry",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "assets/icon.ico"
     },
     "files": [
+      "assets/icon.ico",
       "main.js",
       "preload.js",
       "quarantine.js",

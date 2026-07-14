@@ -19,6 +19,7 @@ function createWindow() {
     minWidth: 860,
     minHeight: 600,
     backgroundColor: '#FFFFFF',
+    icon: path.join(__dirname, 'assets', 'icon.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
