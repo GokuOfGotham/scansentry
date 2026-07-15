@@ -1,6 +1,6 @@
 {
   "name": "scansentry",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "On-demand Windows scan tool: malware hash check, junk/temp cleanup, startup audit, browser hijack detection.",
   "main": "main.js",
   "scripts": {
