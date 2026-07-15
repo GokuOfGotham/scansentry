@@ -6,13 +6,14 @@
   "scripts": {
     "start": "electron .",
     "icons": "electron scripts/render-icons.js",
+    "smoke": "electron scripts/smoke-electron.js",
     "dist": "electron-builder --win"
   },
   "author": "Julio",
   "license": "UNLICENSED",
   "devDependencies": {
-    "electron": "^31.0.0",
-    "electron-builder": "^24.13.3"
+    "electron": "^43.1.1",
+    "electron-builder": "^26.15.3"
   },
   "build": {
     "appId": "com.local.scansentry",
