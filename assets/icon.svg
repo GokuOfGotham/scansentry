@@ -1,51 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a2035"/>
-      <stop offset="100%" style="stop-color:#0d1525"/>
+    <linearGradient id="badgeBg" x1="80" y1="48" x2="424" y2="456" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7FEFF"/>
+      <stop offset="1" stop-color="#DDF8F0"/>
     </linearGradient>
-    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#00c8e0;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#00c8e0;stop-opacity:0"/>
+    <linearGradient id="shieldFill" x1="112" y1="76" x2="388" y2="442" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38D5FF"/>
+      <stop offset="0.48" stop-color="#0078D4"/>
+      <stop offset="1" stop-color="#18A058"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="panelFill" x1="172" y1="132" x2="338" y2="392" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EAFBFF"/>
+    </linearGradient>
+    <radialGradient id="topGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(184 126) rotate(48) scale(230 170)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Shield body -->
-  <path d="M256 32 L440 112 L440 272 C440 370 356 440 256 480 C156 440 72 370 72 272 L72 112 Z"
-        fill="url(#shieldGrad)" stroke="#2a3a5c" stroke-width="4"/>
+  <circle cx="256" cy="256" r="234" fill="url(#badgeBg)"/>
+  <circle cx="256" cy="256" r="226" fill="none" stroke="#BDEFFF" stroke-width="10"/>
 
-  <!-- Shield inner highlight glow fill -->
-  <path d="M256 60 L416 128 L416 272 C416 356 340 418 256 454 C172 418 96 356 96 272 L96 128 Z"
-        fill="url(#glowGrad)"/>
+  <path d="M256 48C298 76 356 101 424 120V244C424 356 355 431 256 468C157 431 88 356 88 244V120C156 101 214 76 256 48Z"
+        fill="url(#shieldFill)" stroke="#0067B8" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M256 72C295 96 348 119 400 134V244C400 342 340 408 256 442C172 408 112 342 112 244V134C164 119 217 96 256 72Z"
+        fill="url(#topGlow)"/>
+  <path d="M256 112C287 130 325 146 358 158V242C358 317 318 367 256 398C194 367 154 317 154 242V158C187 146 225 130 256 112Z"
+        fill="url(#panelFill)" opacity="0.96"/>
 
-  <!-- Shield border accent -->
-  <path d="M256 48 L428 122 L428 272 C428 364 348 432 256 470 C164 432 84 364 84 272 L84 122 Z"
-        fill="none" stroke="#00c8e0" stroke-width="2" opacity="0.4"/>
+  <circle cx="250" cy="242" r="72" fill="none" stroke="#0078D4" stroke-width="12" opacity="0.24"/>
+  <circle cx="250" cy="242" r="42" fill="none" stroke="#0078D4" stroke-width="10" opacity="0.18"/>
+  <path d="M180 242H322" stroke="#00A6B2" stroke-width="12" stroke-linecap="round" opacity="0.42"/>
+  <path d="M250 242L334 190" stroke="#00A6B2" stroke-width="10" stroke-linecap="round" opacity="0.72"/>
+  <circle cx="334" cy="190" r="15" fill="#FF6B5F"/>
+  <circle cx="334" cy="190" r="26" fill="#FF6B5F" opacity="0.16"/>
 
-  <!-- Horizontal scan line -->
-  <line x1="104" y1="256" x2="408" y2="256"
-        stroke="#00c8e0" stroke-width="2" opacity="0.25"/>
+  <path d="M196 272L238 314L324 212" fill="none" stroke="#18A058" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M196 272L238 314L324 212" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
 
-  <!-- Scan sweep line (active) -->
-  <line x1="256" y1="160" x2="380" y2="256"
-        stroke="#00c8e0" stroke-width="2.5" opacity="0.7" filter="url(#glow)"/>
-
-  <!-- Radar arcs -->
-  <circle cx="256" cy="256" r="48"  fill="none" stroke="#00c8e0" stroke-width="1.5" opacity="0.20"/>
-  <circle cx="256" cy="256" r="88"  fill="none" stroke="#00c8e0" stroke-width="1.5" opacity="0.14"/>
-  <circle cx="256" cy="256" r="128" fill="none" stroke="#00c8e0" stroke-width="1" opacity="0.10"/>
-
-  <!-- Center dot -->
-  <circle cx="256" cy="256" r="7" fill="#00c8e0" opacity="0.9" filter="url(#glow)"/>
-
-  <!-- Threat blip (coral-red dot on scan perimeter) -->
-  <circle cx="344" cy="208" r="6" fill="#ff5f57" filter="url(#glow)" opacity="0.95"/>
-  <circle cx="344" cy="208" r="10" fill="#ff5f57" opacity="0.18"/>
+  <path d="M382 132L393 156L418 166L393 176L382 200L371 176L346 166L371 156Z" fill="#FFB900"/>
+  <circle cx="132" cy="184" r="14" fill="#43D9A3" opacity="0.88"/>
+  <circle cx="390" cy="320" r="10" fill="#FFFFFF" opacity="0.82"/>
 </svg>
