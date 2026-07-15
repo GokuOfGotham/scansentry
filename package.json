@@ -1,6 +1,6 @@
 {
   "name": "scansentry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "On-demand Windows scan tool: malware hash check, junk/temp cleanup, startup audit, browser hijack detection.",
   "main": "main.js",
   "scripts": {
@@ -9,15 +9,16 @@
     "smoke": "electron scripts/smoke-electron.js",
     "dist": "electron-builder --win"
   },
-  "author": "Julio",
+  "author": "GokuofGotham",
   "license": "UNLICENSED",
   "devDependencies": {
     "electron": "^43.1.1",
     "electron-builder": "^26.15.3"
   },
   "build": {
-    "appId": "com.local.scansentry",
+    "appId": "com.gokuofgotham.scansentry",
     "productName": "ScanSentry",
+    "copyright": "Copyright (C) 2026 GokuofGotham",
     "win": {
       "target": "nsis",
       "icon": "assets/icon.ico"
